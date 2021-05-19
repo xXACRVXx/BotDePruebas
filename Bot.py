@@ -8,7 +8,7 @@ def help(update, context):
 
 if __name__ == '__main__':
     
-     updater =        Updater(token='1756188628:AAG6uWqj8VKDxJsiajTCq8mrsq6S3hWgOEQ', use_context=True)
+     updater =        Updater(token='you token', use_context=True)
      
      dp = updater.dispatcher
     
