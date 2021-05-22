@@ -22,7 +22,7 @@ def process_message(update, context):
    print('Usuario: ' + text + ' \n')
    
    if str(text).__contains__('-say'):
-      context.bot.send_message(chat_id='@hentai_s3',text=str(text).replace('-say', ''))
+      context.bot.send_message(chat_id='@Xx_A_xX_soporte',text=str(text).replace('-say', ''))
     
 if __name__ == '__main__':
     
