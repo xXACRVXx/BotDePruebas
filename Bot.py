@@ -1,7 +1,7 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler , Filters
 
 def start(update, context):
-      update.message.reply_text('Hola, humano\nSoy Xx_A_xX ver:0.08.32(beta)')
+      update.message.reply_text('Hola, humano\n\nSoy Xx_A_xX ver:0.08.12(beta)')
 
 def anime(update, context):
       update.message.reply_text('Yo no puedo buscar anime todavía, quisas en un futuro :(')
