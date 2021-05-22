@@ -4,17 +4,11 @@ def start(update, context):
       update.message.reply_text('Hola, humano\nSoy Xx_A_xX ver:0.08.32(beta)')
 
 def anime(update, context):
-      update.message.reply_text('Yo no puedo hacer eso :(')
+      update.message.reply_text('Yo no puedo buscar anime todavía, quisas en un futuro :(')
       
 def help(update, context):
          update.message.reply_text('hola por ahora no hago mucho solo  tengo /start /anime y /help pero también puedo enviar un mensaje con -say a mi grupo de soporte o a el que se halla configurado (esto solo lo puede cambiar mi administrador)')
 
-#def process_chat(update, context): 
-   
-  # chat= update.message.chat
-    
-  # print(chat)
-       
 def process_message(update, context): 
    
    text= update.message.text
@@ -36,9 +30,6 @@ if __name__ == '__main__':
      despachador.add_handler(CommandHandler('anime', anime))
      
      despachador.add_handler(CommandHandler('help', help))
-     
-     
-     #despachador.add_handler(MessageHandler(filters = Filters.chat , callback = process_chat))
      
      despachador.add_handler(MessageHandler(filters = Filters.text , callback = process_message))
      
