@@ -7,7 +7,7 @@ def anime(update, context):
       update.message.reply_text('Yo no puedo buscar anime todavía, quisas en un futuro :(')
       
 def help(update, context):
-         update.message.reply_text('hola por ahora no hago mucho solo  tengo /start /anime y /help pero también puedo enviar un mensaje con -say a mi grupo de soporte o a el que se halla configurado (esto solo lo puede cambiar mi administrador)')
+         update.message.reply_text('hola por ahora no hago mucho solo  tengo /start /anime y /help pero también puedo enviar un mensaje con -say a mi grupo de soporte o a el que se halla configurado (esto solo lo puede cambiar mi administrador) el grupo por defecto es mi grupo de soporte @Xx_A_xX_soporte')
 
 def process_message(update, context): 
    
