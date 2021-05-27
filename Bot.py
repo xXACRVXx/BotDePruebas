@@ -35,6 +35,6 @@ if __name__ == '__main__':
      
      actualizador.start_polling()
       
-     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken aseptado exitosamente: \n\ncargando...\n\nbot iniciado\n\nfuncionando\n\nEn linea  \n\n")
+     print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntoken aceptado exitosamente: \n\ncargando...\n\nbot iniciado\n\nfuncionando\n\nEn linea  \n\n")
      
      actualizador.idle()
