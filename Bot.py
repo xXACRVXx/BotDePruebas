@@ -6,9 +6,10 @@ import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 # TOKEN contiene el token de telegram necesario para que el bot funcione se extrae en este caso de la variable de entorno configurada en Heroku
-#TOKEN = os.getenv("TOKEN")
 
-TOKEN ="1858921469:AAEw1TIz5JkiRz-KS6_QUUak_97rE0idc0M"
+
+TOKEN = os.getenv("TOKEN")
+
 
 
 # el # para reenviar los archivos
