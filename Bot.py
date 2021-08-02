@@ -30,8 +30,9 @@ Canal_hastag1= '@canalparaprobarbots'
 # aqui se pone el grupo o canal al que desea reenviar los mensajes que contengan #deseo
 Canal_hastag2 ='-1001407312660'
 
-
-
+# el grupo de donde estan los usuarios que interactúan con el bot
+#GrupoPrincipal = '@hentai_s3'
+GrupoPrincipal = '@grupo_para_probar_bots'
 
 # grupo donde se encuentran los administradores de el bot
 #Admins_Grupo = '-1001255367733'
@@ -56,6 +57,20 @@ print('By Python 3.8')
 def admins(Contextbot, Usuario_id ):
   
   ChatId = Admins_Grupo
+  
+  GrupoAdmins = Contextbot.get_chat_administrators(ChatId)
+  
+  EsAdmin = False
+  for admin in GrupoAdmins:
+        if admin.user.id == Usuario_id:
+           EsAdmin = True
+  return EsAdmin
+
+
+# a diferencia de admins(), alladmins() incluye a todos los administradores y no solo a los del grupo de administradores 
+def alladmins(Contextbot, Usuario_id):
+  
+  ChatId = GrupoPrincipal
   
   GrupoAdmins = Contextbot.get_chat_administrators(ChatId)
   
@@ -115,16 +130,60 @@ def stop(update, context):
 def updates(update, context):
       update.message.reply_text( """Historial de cambios ver: 1.5.7\n\ninformacion clasificada hasta que me entren ganas de escribir """ )
 
-def stop(update, context):
+def ign(update, context):
   print('yes')
   
-  
+   Usuario2 =update.effective_user['username']
+   
+   print(Usuario2)
+
+   Usuario_id = update.effective_user['id']
+   
+   Contextbot = context.bot
+   
+   Args = context.args
+   
+   Reemplazar = str(Args).replace("['", "")
+        
+   El_baneado = Reemplazar.replace("']", "")
+
+   if alladmins(Contextbot, Usuario_id) == True :  
+      if not ignore.__contains__(El_baneado):
+      
+         
+      
+         ignore.append(El_baneado)
+         
+         update.message.reply_text(f"@{Usuario2}-Sama El reenvío de multimedia a sido desactivado ")
+     
+     
+     
+      print(ignore)
+      return ignore
   
 
 
-def stop(update, context):
+def noign(update, context):
   print('no')
   
+  Usuario2 =update.effective_user['username']
+  
+   print(Usuario2)
+  
+   Usuario_id = update.effective_user['id']
+   
+   Contextbot = context.bot
+   
+   
+
+   if admins(Contextbot, Usuario_id) == True :  
+      
+      update.message.reply_text(f"@{Usuario2}-Sama El reenvío de multimedia a sido activado ")
+      
+      if modo.__contains__('1'):
+         modo.remove('1')
+         return modo
+         print(modo)
   
   
 
