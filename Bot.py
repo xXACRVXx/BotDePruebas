@@ -37,11 +37,9 @@ Canal_hastag2 ='-1001407312660'
 #Admins_Grupo = '-1001255367733'
 Admins_Grupo = '@grupo_para_probar_bots'
 
-Borrar = 'https://t.me/canalparaprobarbots/'
 
 # aquí terminan los parámetros editables de el bot
 ##############################################################################
-
 
 
 # modo = [] controla el reenvío de arcivos del bot se guarda str("1") si el bot es desactivado por los admiradores o se deja vacía para que funcione
@@ -54,23 +52,10 @@ ignore = []
 
 print('By Python 3.8')
 
-# def admins(Contextbot, Usuario_id ): controla los administradores devolviendo EsAdmin = True en caso de que el usuario sea administrador de el grupo definido en Admins_Grupo
+# def admins(Contextbot, Usuario_id ): controla los administradores devolviendo EsAdmin = True en caso de que el usuario sea administrador de el grupo definido en ChatId
 def admins(Contextbot, Usuario_id ):
   
-  global Admins_Grupo
-  
-  GrupoAdmins = Contextbot.get_chat_administrators(Admins_Grupo)
-  
-  EsAdmin = False
-  for admin in GrupoAdmins:
-        if admin.user.id == Usuario_id:
-           EsAdmin = True
-  return EsAdmin
-
-
-# a diferencia de admins(), alladmins() incluye a todos los administradores y no solo a los del grupo de administradores 
-def alladmins(Contextbot, Usuario_id, ChatId ):
-  
+  ChatId = Admins_Grupo
   
   GrupoAdmins = Contextbot.get_chat_administrators(ChatId)
   
@@ -126,39 +111,6 @@ def stop(update, context):
       print(modo)
       return modo
 
-
-
-def borrar(update, context):
-  
-  
-  
-  ChatId = update.message.chat.id
-  
-  Contextbot = context.bot
-  
-  Args = context.args
-  
-  Usuario_id = update.effective_user['id']
- 
-  if alladmins(Contextbot, Usuario_id, ChatId) == True:
-   
-     if str(Args).__contains__(Borrar):
-        #print("eeeeeooo ",Args)
-        
-        Reemplazar = str(Args).replace("['"+str(Borrar), "")
-       
-        #print("estoooooo  ", Reemplazar) 
-        
-        
-        El_id = Reemplazar.replace("']", "")
-        #Canal_hastag = Canal_hastag1.replace("@", "")
-        Contextbot.delete_message(ChatId, El_id)
-        
-        update.message.reply_text('El mensaje fue borrado')
-        print(El_id)
-  
-
-
 # el comando /updates muestra el Historial de cambios de las actualizaciones del bot
 def updates(update, context):
       update.message.reply_text( """Historial de cambios ver: 1.5.7\n\ninformacion clasificada hasta que me entren ganas de escribir """ )
@@ -179,7 +131,7 @@ def mensajes_entrantes(update, context):
    
      Contextbot = context.bot
    
-     
+   
      # esto es opcional solo esta aquí como alternativa a /start y /stop en caso de existir muchos bots en un grupo y asi no tengan que responder todos al conando /start
      if admins(Contextbot, Usuario_id) == True :  
        if str(Texto).startswith('-off'):
@@ -209,12 +161,11 @@ def mensajes_entrantes(update, context):
            
            if str(Subtitulos).__contains__(Hastag1):
             Id_mensage = update.message.message_id
-            print(update)
             context.bot.forward_message(chat_id=Canal_hastag1 ,from_chat_id = Id_grupo , message_id= Id_mensage )
            
            if str(Texto).startswith(Hastag1):
             Id_mensage_re = update.message.reply_to_message.message_id
-            print(update)
+            
             context.bot.forward_message(chat_id=Canal_hastag1 ,from_chat_id = Id_grupo , message_id= Id_mensage_re )
             update.message.reply_text("Tu mensaje fue enviado")
      
@@ -255,8 +206,6 @@ despachador = actualizador.dispatcher
 despachador.add_handler(CommandHandler('start', start))
 
 despachador.add_handler(CommandHandler('stop', stop))
-
-despachador.add_handler(CommandHandler('borrar', borrar))
 
 despachador.add_handler(CommandHandler('updates', updates))
 
