@@ -117,10 +117,16 @@ def updates(update, context):
 
 def stop(update, context):
   print('yes')
+  
+  
+  
 
 
 def stop(update, context):
   print('no')
+  
+  
+  
 
 
 # en def mensajes_entrantes(update, context): es donde se maneja la mayoría de mensajes que entran y salen hacia Telegram convirtiendolo en una de las partes fundamentales del bot
