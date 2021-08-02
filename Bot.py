@@ -154,12 +154,12 @@ def ign(update, context):
       
          ignore.append(El_baneado)
          
-         update.message.reply_text(f"@{Usuario2}-Sama El reenvío de multimedia a sido desactivado ")
+         update.message.reply_text(f"@{Usuario2}-Sama El usuario {El_baneado} será ignorado ")
      
      
      
-      print(ignore)
-      return ignore
+   print(ignore)
+   return ignore
   
 
 
@@ -174,16 +174,21 @@ def noign(update, context):
    
    Contextbot = context.bot
    
+   Args = context.args
+   
+   Reemplazar = str(Args).replace("['", "")
+        
+   El_baneado = Reemplazar.replace("']", "")
    
 
    if admins(Contextbot, Usuario_id) == True :  
       
-      update.message.reply_text(f"@{Usuario2}-Sama El reenvío de multimedia a sido activado ")
+      update.message.reply_text(f"@{Usuario2}-Sama El usuario {El_baneado} dejará de ser ignorado\nLista de ignorados {ignore} ")
       
-      if modo.__contains__('1'):
-         modo.remove('1')
-         return modo
-         print(modo)
+      if ignore.__contains__(El_baneado):
+         ignore.remove(El_baneado)
+         return ignore
+         print(ignore)
   
   
 
