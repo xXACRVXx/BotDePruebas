@@ -148,11 +148,11 @@ def borrar(update, context):
         Reemplazar = str(Args).replace("['"+str(Borrar), "")
        
         #print("estoooooo  ", Reemplazar) 
-        oooee = "-1001224725006"
+        
         
         El_id = Reemplazar.replace("']", "")
         #Canal_hastag = Canal_hastag1.replace("@", "")
-        Contextbot.delete_message(oooee, '169')
+        Contextbot.delete_message(ChatId, El_id)
         
         update.message.reply_text('El mensaje fue borrado')
         print(El_id)
