@@ -115,6 +115,14 @@ def stop(update, context):
 def updates(update, context):
       update.message.reply_text( """Historial de cambios ver: 1.5.7\n\ninformacion clasificada hasta que me entren ganas de escribir """ )
 
+def stop(update, context):
+  print('yes')
+
+
+def stop(update, context):
+  print('no')
+
+
 # en def mensajes_entrantes(update, context): es donde se maneja la mayoría de mensajes que entran y salen hacia Telegram convirtiendolo en una de las partes fundamentales del bot
 def mensajes_entrantes(update, context):
      Texto= update.message.text
@@ -206,6 +214,10 @@ despachador = actualizador.dispatcher
 despachador.add_handler(CommandHandler('start', start))
 
 despachador.add_handler(CommandHandler('stop', stop))
+
+despachador.add_handler(CommandHandler('ign',ign)
+
+despachador.add_handler(CommandHandler('noign',noign)
 
 despachador.add_handler(CommandHandler('updates', updates))
 
