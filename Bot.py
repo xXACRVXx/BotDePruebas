@@ -11,6 +11,36 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 TOKEN = os.getenv("TOKEN")
 
 
+# el # para reenviar los archivos
+#Hastag1 = '#hentai'
+Hastag1 = '#prueba'
+
+# el # para enviar sugerencias al canal de los administradores
+Hastag2 = '#deseo'
+
+
+# aqui se pone el grupo o canal al que desea reenviar los mensajes que contengan #hentai
+#Canal_hastag1= '@solo_hentai_s3'
+
+Canal_hastag1= '@canalparaprobarbots'
+
+
+
+# aqui se pone el grupo o canal al que desea reenviar los mensajes que contengan #deseo
+Canal_hastag2 ='-1001407312660'
+
+# el grupo de donde estan los usuarios que interactúan con el bot
+#GrupoPrincipal = '@hentai_s3'
+GrupoPrincipal = '@grupo_para_probar_bots'
+
+# grupo donde se encuentran los administradores de el bot
+#Admins_Grupo = '-1001255367733'
+Admins_Grupo = '@grupo_para_probar_bots'
+
+
+# aquí terminan los parámetros editables de el bot
+##############################################################################
+
 
 
 
